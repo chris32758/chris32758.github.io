@@ -402,7 +402,7 @@ function finishGame(canvas){
           var y = border+200 +g*55;
           // context.fillText("Generation " + g, border+10, y);
           for (i=0;i<BUGIMAGES.length;i++){
-             var prozent = Math.round(100 * faunaStat[g][i]["starter"]/NUMBEROFBUGS);
+             var prozent = faunaStat[g][i]["starter"];
              context.fillText(prozent, border+250+i*35, y);
              //context.drawImage(BUGIMAGES[i],border+150+i*35,border+50,BUGSIZE,BUGSIZE);
           }
@@ -412,10 +412,9 @@ function finishGame(canvas){
         var y = border+200 + (Generation+1)*55;
         // context.fillText("Endpopulation", border+10, y);
         for (i=0;i<BUGIMAGES.length;i++){
-           var prozent = Math.round(100 * faunaStat[Generation][i]["survivor"]/aliveAnz);
+           var prozent = faunaStat[Generation][i]["survivor"];
            context.fillText(prozent, border+250+i*35, y);
         }
-    // */
 
     }
     TransitionTime = new Date();
