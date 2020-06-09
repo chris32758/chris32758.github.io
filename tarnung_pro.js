@@ -412,7 +412,7 @@ function finishGame(canvas){
         var y = border+200 + (Generation+1)*55;
         // context.fillText("Endpopulation", border+10, y);
         for (i=0;i<BUGIMAGES.length;i++){
-            var prozent = Math.round(100 * faunaStat[Generation][i]["survivor"] / 100);
+            var prozent = Math.round(100 * faunaStat[Generation][i]["survivor"] / NUMBEROFBUGS);
             context.fillText(prozent, border+250+i*35, y);
         }
 
