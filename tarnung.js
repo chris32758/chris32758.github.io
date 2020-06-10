@@ -408,11 +408,18 @@ function finishGame(canvas){
           }
         }
 
+        var alive = 0;
+        for (i=0;i<fauna.length;i++){
+            if (fauna[i]["alive"]){
+                alive++;
+            }
+        }
+
     // Endpopulation
         var y = border+200 + (Generation+1)*55;
         // context.fillText("Endpopulation", border+10, y);
         for (i=0;i<BUGIMAGES.length;i++){
-           var prozent = faunaStat[Generation][i]["survivor"];
+           var prozent = Math.round(faunaStat[Generation][i]["survivor"] * NUMBEROFBUGS / alive);
            context.fillText(prozent, border+250+i*35, y);
         }
 
